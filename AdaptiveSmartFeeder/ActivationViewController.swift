@@ -9,7 +9,7 @@
 import UIKit
 import CoreBluetooth
 
-class ActivationViewController: ViewController, UITextFieldDelegate, BluetoothSerialDelegate {
+class ActivationViewController: ViewController, UITextFieldDelegate/*, BluetoothSerialDelegate*/ {
     
     @IBOutlet weak var activationTextField: UITextField!
     @IBOutlet weak var activationSlider: UISlider!
@@ -31,12 +31,12 @@ class ActivationViewController: ViewController, UITextFieldDelegate, BluetoothSe
         }
     }
     
-    var pendingCommand: String?
+    //var pendingCommand: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        serial = BluetoothSerial(delegate: self)
+        //serial = BluetoothSerial(delegate: self)
         self.activationTextField.delegate = self
         
         self.currentValue = 500
@@ -45,7 +45,7 @@ class ActivationViewController: ViewController, UITextFieldDelegate, BluetoothSe
         self.view.addGestureRecognizer(tapGestureRecognizer)
         
         print("Start scanning...")
-        serial.startScan()
+        //serial.startScan()
     }
     
     func handleTap() {
@@ -58,9 +58,10 @@ class ActivationViewController: ViewController, UITextFieldDelegate, BluetoothSe
     
     @IBAction func activate(_ sender: Any) {
         
-        self.pendingCommand = "ac \(self.currentValue)"
-
-        self.sendCommand()
+        BluetoothSerialHM10.instance.pendingCommand = "ac \(self.currentValue)"
+        BluetoothSerialHM10.instance.sendCommand()
+        //self.pendingCommand = "ac \(self.currentValue)"
+        //self.sendCommand()
     }
     
     //MARK: Switch actions
@@ -113,7 +114,7 @@ class ActivationViewController: ViewController, UITextFieldDelegate, BluetoothSe
     
     
     //MARK: BluetoothSerial Delegate
-    
+    /*
     func sendCommand() {
         
         guard let pendingCommand = self.pendingCommand else { return }
@@ -153,7 +154,6 @@ class ActivationViewController: ViewController, UITextFieldDelegate, BluetoothSe
     func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
         
     }
-    
-    
+    */
 
 }
