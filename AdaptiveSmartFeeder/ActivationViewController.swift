@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreBluetooth
 
-class ActivationViewController: ViewController, UITextFieldDelegate {
+class ActivationViewController: ViewController, UITextFieldDelegate, BluetoothSerialDelegate {
     
     @IBOutlet weak var activationTextField: UITextField!
     @IBOutlet weak var activationSlider: UISlider!
@@ -29,16 +30,22 @@ class ActivationViewController: ViewController, UITextFieldDelegate {
             self.activationSlider.value = Float(newValue) / Float(maxValue)
         }
     }
+    
+    var pendingCommand: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        serial = BluetoothSerial(delegate: self)
         self.activationTextField.delegate = self
         
         self.currentValue = 500
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         self.view.addGestureRecognizer(tapGestureRecognizer)
+        
+        print("Start scanning...")
+        serial.startScan()
     }
     
     func handleTap() {
@@ -50,8 +57,10 @@ class ActivationViewController: ViewController, UITextFieldDelegate {
     
     
     @IBAction func activate(_ sender: Any) {
-        let message = "ac \(self.currentValue)"
-        print(message) // send to Arduino
+        
+        self.pendingCommand = "ac \(self.currentValue)"
+
+        self.sendCommand()
     }
     
     //MARK: Switch actions
@@ -101,5 +110,50 @@ class ActivationViewController: ViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    
+    //MARK: BluetoothSerial Delegate
+    
+    func sendCommand() {
+        
+        guard let pendingCommand = self.pendingCommand else { return }
+        
+        if serial.connectedPeripheral != nil {
+            let data = pendingCommand.data(using: .utf8)!
+            serial.sendDataToDevice(data)
+        }
+        else if let pendingPeripheral = serial.pendingPeripheral {
+            serial.connectToPeripheral(pendingPeripheral)
+        }
+        else {
+            serial.startScan()
+        }
+    }
+    
+    func serialDidDiscoverPeripheral(_ peripheral: CBPeripheral, RSSI: NSNumber?) {
+        
+        if peripheral.name == "HMSoft" {
+            print("Discovered HMSoft, trying to connect...")
+            serial.stopScan()
+            serial.connectToPeripheral(peripheral)
+        }
+    }
+    
+    func serialDidConnect(_ peripheral: CBPeripheral) {
+        
+        print("Connected to HMSoft")
+        
+        self.sendCommand()
+    }
+    
+    func serialDidChangeState() {
+        
+    }
+    
+    func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
+        
+    }
+    
+    
 
 }
