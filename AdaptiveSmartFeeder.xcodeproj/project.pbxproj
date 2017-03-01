@@ -14,6 +14,7 @@
 		C572E5C21E6623DC00252691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C572E5C01E6623DC00252691 /* LaunchScreen.storyboard */; };
 		C572E5CD1E6623DC00252691 /* AdaptiveSmartFeederTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5CC1E6623DC00252691 /* AdaptiveSmartFeederTests.swift */; };
 		C572E5D81E6623DC00252691 /* AdaptiveSmartFeederUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5D71E6623DC00252691 /* AdaptiveSmartFeederUITests.swift */; };
+		C572E5E61E663CF200252691 /* ActivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5E51E663CF200252691 /* ActivationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C572E5D31E6623DC00252691 /* AdaptiveSmartFeederUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdaptiveSmartFeederUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C572E5D71E6623DC00252691 /* AdaptiveSmartFeederUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveSmartFeederUITests.swift; sourceTree = "<group>"; };
 		C572E5D91E6623DC00252691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C572E5E51E663CF200252691 /* ActivationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				C572E5B71E6623DC00252691 /* AppDelegate.swift */,
 				C572E5B91E6623DC00252691 /* ViewController.swift */,
+				C572E5E51E663CF200252691 /* ActivationViewController.swift */,
 				C572E5BB1E6623DC00252691 /* Main.storyboard */,
 				C572E5BE1E6623DC00252691 /* Assets.xcassets */,
 				C572E5C01E6623DC00252691 /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				C572E5BA1E6623DC00252691 /* ViewController.swift in Sources */,
 				C572E5B81E6623DC00252691 /* AppDelegate.swift in Sources */,
+				C572E5E61E663CF200252691 /* ActivationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +518,7 @@
 				C572E5DE1E6623DC00252691 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C572E5DF1E6623DC00252691 /* Build configuration list for PBXNativeTarget "AdaptiveSmartFeederTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				C572E5E11E6623DC00252691 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C572E5E21E6623DC00252691 /* Build configuration list for PBXNativeTarget "AdaptiveSmartFeederUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				C572E5E41E6623DC00252691 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
