@@ -19,6 +19,7 @@
 		C5DF92EA1E67B270002A3DEE /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF92E91E67B270002A3DEE /* Pet.swift */; };
 		C5DF92EF1E67B535002A3DEE /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF92EE1E67B535002A3DEE /* DateExtensions.swift */; };
 		C5DF92F41E67B9FA002A3DEE /* PetEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF92F31E67B9FA002A3DEE /* PetEnums.swift */; };
+		C5DF92F61E67C495002A3DEE /* BluetoothSerialHM10.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF92F51E67C495002A3DEE /* BluetoothSerialHM10.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		C5DF92E91E67B270002A3DEE /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		C5DF92EE1E67B535002A3DEE /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		C5DF92F31E67B9FA002A3DEE /* PetEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetEnums.swift; sourceTree = "<group>"; };
+		C5DF92F51E67C495002A3DEE /* BluetoothSerialHM10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothSerialHM10.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				C5DF92E91E67B270002A3DEE /* Pet.swift */,
 				C572E5E71E6654B800252691 /* BluetoothSerial.swift */,
+				C5DF92F51E67C495002A3DEE /* BluetoothSerialHM10.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5DF92F61E67C495002A3DEE /* BluetoothSerialHM10.swift in Sources */,
 				C5DF92E81E67B094002A3DEE /* PetProfileViewController.swift in Sources */,
 				C572E5B81E6623DC00252691 /* AppDelegate.swift in Sources */,
 				C5DF92EA1E67B270002A3DEE /* Pet.swift in Sources */,
