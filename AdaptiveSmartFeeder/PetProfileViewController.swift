@@ -10,6 +10,7 @@ import UIKit
 
 class PetProfileViewController: UIViewController {
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var petImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var birthDateLabel: UILabel!
@@ -23,6 +24,16 @@ class PetProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupNavigationBar()
+        self.setupLabels()
+    }
+    
+    func setupNavigationBar() {
+        self.navigationBar.tintColor = .white
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+    }
+    
+    func setupLabels() {
         self.nameLabel.text = pet.name
         self.birthDateLabel.text = self.getPetBirthDate()
         self.ageLabel.text = self.getPetAge()

@@ -11,8 +11,10 @@ import CoreBluetooth
 
 class ActivationViewController: UIViewController, UITextFieldDelegate/*, BluetoothSerialDelegate*/ {
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var activationTextField: UITextField!
     @IBOutlet weak var activationSlider: UISlider!
+    @IBOutlet weak var activationButton: UIButton!
     
     let maxValue = 1000
     
@@ -36,6 +38,8 @@ class ActivationViewController: UIViewController, UITextFieldDelegate/*, Bluetoo
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setupNavigationBar()
+        self.activationButton.layer.cornerRadius = 4.0
         //serial = BluetoothSerial(delegate: self)
         self.activationTextField.delegate = self
         
@@ -52,6 +56,10 @@ class ActivationViewController: UIViewController, UITextFieldDelegate/*, Bluetoo
         _ = self.textFieldShouldReturn(self.activationTextField)
     }
     
+    func setupNavigationBar() {
+        self.navigationBar.tintColor = .white
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+    }
     
     //MARK: Button actions
     

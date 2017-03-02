@@ -41,7 +41,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="QXQ-n3-D1c">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pet1" translatesAutoresizingMaskIntoConstraints="NO" id="QXQ-n3-D1c">
                                 <rect key="frame" x="0.0" y="64" width="375" height="186"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="186" id="zkq-7y-Obg"/>
@@ -49,6 +49,7 @@
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zq3-G1-jPc">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="1" green="0.78552446260777242" blue="0.085156612868071233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Profile" id="wgD-LS-yS3">
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="Q8Z-Y4-9Ba"/>
@@ -58,7 +59,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhd-q2-VoY">
                                 <rect key="frame" x="16" y="270" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.25098039220000001" green="0.52941176469999995" blue="0.062745098040000002" alpha="0.72999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mmk-g0-2Ya">
@@ -197,6 +198,7 @@
                         <outlet property="birthDateLabel" destination="893-yz-aUo" id="DzY-pO-MiB"/>
                         <outlet property="genderLabel" destination="NFj-SP-p8P" id="SuT-2T-ggB"/>
                         <outlet property="nameLabel" destination="Uhd-q2-VoY" id="val-S2-NzF"/>
+                        <outlet property="navigationBar" destination="Zq3-G1-jPc" id="Lte-Yo-fMe"/>
                         <outlet property="petImageView" destination="QXQ-n3-D1c" id="gi6-eX-d2p"/>
                         <outlet property="sizeLabel" destination="D8t-yr-IJi" id="Xl5-nQ-STJ"/>
                         <outlet property="weightLabel" destination="wRV-0v-wFC" id="Zwg-px-uIg"/>
@@ -220,6 +222,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URf-xR-3S4">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="1" green="0.78552446259999997" blue="0.085156612869999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Activation" id="BMZ-Le-g7i"/>
                                 </items>
@@ -227,7 +230,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imediate activation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6N2-mz-bgf">
                                 <rect key="frame" x="15" y="255" width="157" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.78552446259999997" blue="0.085156612869999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automated activation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFf-qu-5aD">
@@ -236,7 +239,7 @@
                                     <constraint firstAttribute="width" constant="212" id="twh-0q-VB9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.78552446259999997" blue="0.085156612869999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSk-p4-fk6">
@@ -282,17 +285,21 @@
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Mz-Yt-mlC">
                                 <rect key="frame" x="16" y="356" width="340" height="31"/>
+                                <color key="tintColor" red="0.25098039220000001" green="0.52941176469999995" blue="0.062745098040000002" alpha="0.72999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="activationSliderValueChanged:" destination="hc6-dZ-cZS" eventType="valueChanged" id="udZ-uO-Bsb"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0B-nz-Hc1">
-                                <rect key="frame" x="158" y="426" width="56" height="30"/>
+                                <rect key="frame" x="149" y="430" width="77" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.78552446259999997" blue="0.085156612869999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="L5E-1L-H8o"/>
+                                    <constraint firstAttribute="width" constant="77" id="L5E-1L-H8o"/>
                                     <constraint firstAttribute="height" constant="30" id="vf0-zu-BhX"/>
                                 </constraints>
-                                <state key="normal" title="Activate"/>
+                                <state key="normal" title="Activate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="activate:" destination="hc6-dZ-cZS" eventType="touchUpInside" id="icV-YC-MVR"/>
                                 </connections>
@@ -309,13 +316,13 @@
                             <constraint firstItem="5Mz-Yt-mlC" firstAttribute="top" secondItem="SVq-Cu-sNe" secondAttribute="bottom" constant="30" id="NWV-wq-hpn"/>
                             <constraint firstItem="SVq-Cu-sNe" firstAttribute="top" secondItem="6N2-mz-bgf" secondAttribute="bottom" constant="20" id="Pet-Ru-eFM"/>
                             <constraint firstItem="6N2-mz-bgf" firstAttribute="leading" secondItem="UtK-iM-NwP" secondAttribute="leadingMargin" constant="-1" id="QbF-fg-TVd"/>
-                            <constraint firstItem="b0B-nz-Hc1" firstAttribute="centerX" secondItem="5Mz-Yt-mlC" secondAttribute="centerX" id="TAp-pM-A2P"/>
+                            <constraint firstItem="b0B-nz-Hc1" firstAttribute="centerX" secondItem="5Mz-Yt-mlC" secondAttribute="centerX" constant="1.5" id="TAp-pM-A2P"/>
                             <constraint firstItem="x76-nH-MCd" firstAttribute="leading" secondItem="YSk-p4-fk6" secondAttribute="leading" id="Ys1-Oe-fz1"/>
                             <constraint firstItem="x76-nH-MCd" firstAttribute="top" secondItem="YSk-p4-fk6" secondAttribute="bottom" constant="20" id="a27-8J-ppk"/>
                             <constraint firstItem="x76-nH-MCd" firstAttribute="trailing" secondItem="YSk-p4-fk6" secondAttribute="trailing" id="dC4-Eg-Zze"/>
                             <constraint firstItem="UCN-21-U1D" firstAttribute="leading" secondItem="x76-nH-MCd" secondAttribute="trailing" constant="22" id="djK-T1-Zih"/>
                             <constraint firstItem="YSk-p4-fk6" firstAttribute="top" secondItem="oFf-qu-5aD" secondAttribute="bottom" constant="20" id="eA0-aU-Qm7"/>
-                            <constraint firstItem="b0B-nz-Hc1" firstAttribute="top" secondItem="5Mz-Yt-mlC" secondAttribute="bottom" constant="40" id="glc-2O-wgm"/>
+                            <constraint firstItem="b0B-nz-Hc1" firstAttribute="top" secondItem="5Mz-Yt-mlC" secondAttribute="bottom" constant="44" id="glc-2O-wgm"/>
                             <constraint firstItem="Jl7-e4-6OT" firstAttribute="trailing" secondItem="UtK-iM-NwP" secondAttribute="trailingMargin" constant="-1" id="h6F-Lz-A6H"/>
                             <constraint firstItem="URf-xR-3S4" firstAttribute="leading" secondItem="UtK-iM-NwP" secondAttribute="leading" id="l2S-mE-DFQ"/>
                             <constraint firstItem="YSk-p4-fk6" firstAttribute="leading" secondItem="oFf-qu-5aD" secondAttribute="leading" id="ooN-MO-bOY"/>
@@ -327,13 +334,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Activation" id="UYY-Bw-0Mn"/>
                     <connections>
+                        <outlet property="activationButton" destination="b0B-nz-Hc1" id="EwG-DS-R6N"/>
                         <outlet property="activationSlider" destination="5Mz-Yt-mlC" id="WrG-Uy-rjv"/>
                         <outlet property="activationTextField" destination="SVq-Cu-sNe" id="fcb-Za-Vq9"/>
+                        <outlet property="navigationBar" destination="URf-xR-3S4" id="suT-tU-Yjg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1l-dO-Vkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="789"/>
+            <point key="canvasLocation" x="-55.200000000000003" y="788.45577211394311"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2H7-dZ-rFE">
@@ -356,6 +365,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dog-placeholder" width="220" height="220"/>
+        <image name="pet1" width="712" height="495"/>
     </resources>
 </document>
