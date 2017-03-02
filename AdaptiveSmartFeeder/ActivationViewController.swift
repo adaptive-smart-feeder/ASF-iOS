@@ -56,11 +56,9 @@ class ActivationViewController: UIViewController, UITextFieldDelegate/*, Bluetoo
     //MARK: Button actions
     
     
-    //TODO: Check if it is needed to handle multiple pending commands (problably yes)
     @IBAction func activate(_ sender: Any) {
         
-        BluetoothSerialHM10.instance.pendingCommand = "ac \(self.currentValue)"
-        BluetoothSerialHM10.instance.sendCommand()
+        BluetoothSerialHM10.instance.addCommand("ac \(self.currentValue)")
         //self.pendingCommand = "ac \(self.currentValue)"
         //self.sendCommand()
     }
@@ -72,8 +70,7 @@ class ActivationViewController: UIViewController, UITextFieldDelegate/*, Bluetoo
     @IBAction func activatedValueChanged(_ sender: UISwitch) {
         self.isAutomatic = sender.isOn
         
-        BluetoothSerialHM10.instance.pendingCommand = "auto \(isAutomatic == true ? 1 : 0)"
-        BluetoothSerialHM10.instance.sendCommand()
+        BluetoothSerialHM10.instance.addCommand("auto \(isAutomatic == true ? 1 : 0)")
     }
 
     

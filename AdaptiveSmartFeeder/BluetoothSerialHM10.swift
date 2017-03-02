@@ -13,25 +13,33 @@ class BluetoothSerialHM10: BluetoothSerialDelegate {
     
     public static var instance = BluetoothSerialHM10()
     
-    public var pendingCommand: String?
+    private var pendingCommands = [String]()
     
     private init() {
         serial = BluetoothSerial(delegate: self)
-        pendingCommand = nil
     }
     
-    func sendCommand() {
+    func addCommand(_ command: String) {
+        self.pendingCommands.append(command)
+        self.sendCommand()
+    }
+    
+    private func sendCommand() {
         
-        guard let pendingCommand = self.pendingCommand else { return }
+        let pendingCommand = self.pendingCommands.first!
         
+        // if connected
         if serial.connectedPeripheral != nil {
             let data = pendingCommand.data(using: .utf8)!
             serial.sendDataToDevice(data)
-            self.pendingCommand = nil
+            self.pendingCommands.removeFirst()
+            if !self.pendingCommands.isEmpty { self.sendCommand() }
         }
+        // else if discovered but not connected
         else if let pendingPeripheral = serial.pendingPeripheral {
             serial.connectToPeripheral(pendingPeripheral)
         }
+        // else if not discovered
         else {
             serial.startScan()
         }
@@ -49,7 +57,9 @@ class BluetoothSerialHM10: BluetoothSerialDelegate {
     func serialDidConnect(_ peripheral: CBPeripheral) {
         
         print("Connected to HMSoft")
-        self.sendCommand()
+        if !self.pendingCommands.isEmpty {
+            self.sendCommand()
+        }
     }
     
     func serialDidChangeState() {
