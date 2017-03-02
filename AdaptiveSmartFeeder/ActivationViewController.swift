@@ -9,7 +9,7 @@
 import UIKit
 import CoreBluetooth
 
-class ActivationViewController: ViewController, UITextFieldDelegate/*, BluetoothSerialDelegate*/ {
+class ActivationViewController: UIViewController, UITextFieldDelegate/*, BluetoothSerialDelegate*/ {
     
     @IBOutlet weak var activationTextField: UITextField!
     @IBOutlet weak var activationSlider: UISlider!

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C572E5B81E6623DC00252691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5B71E6623DC00252691 /* AppDelegate.swift */; };
-		C572E5BA1E6623DC00252691 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5B91E6623DC00252691 /* ViewController.swift */; };
 		C572E5BD1E6623DC00252691 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C572E5BB1E6623DC00252691 /* Main.storyboard */; };
 		C572E5BF1E6623DC00252691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C572E5BE1E6623DC00252691 /* Assets.xcassets */; };
 		C572E5C21E6623DC00252691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C572E5C01E6623DC00252691 /* LaunchScreen.storyboard */; };
@@ -16,6 +15,10 @@
 		C572E5D81E6623DC00252691 /* AdaptiveSmartFeederUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5D71E6623DC00252691 /* AdaptiveSmartFeederUITests.swift */; };
 		C572E5E61E663CF200252691 /* ActivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5E51E663CF200252691 /* ActivationViewController.swift */; };
 		C572E5E81E6654B800252691 /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5E71E6654B800252691 /* BluetoothSerial.swift */; };
+		C5DF92E81E67B094002A3DEE /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF92E71E67B094002A3DEE /* PetProfileViewController.swift */; };
+		C5DF92EA1E67B270002A3DEE /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF92E91E67B270002A3DEE /* Pet.swift */; };
+		C5DF92EF1E67B535002A3DEE /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF92EE1E67B535002A3DEE /* DateExtensions.swift */; };
+		C5DF92F41E67B9FA002A3DEE /* PetEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF92F31E67B9FA002A3DEE /* PetEnums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,6 @@
 /* Begin PBXFileReference section */
 		C572E5B41E6623DC00252691 /* AdaptiveSmartFeeder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdaptiveSmartFeeder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C572E5B71E6623DC00252691 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C572E5B91E6623DC00252691 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C572E5BC1E6623DC00252691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C572E5BE1E6623DC00252691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C572E5C11E6623DC00252691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,10 @@
 		C572E5D91E6623DC00252691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C572E5E51E663CF200252691 /* ActivationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewController.swift; sourceTree = "<group>"; };
 		C572E5E71E6654B800252691 /* BluetoothSerial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothSerial.swift; sourceTree = "<group>"; };
+		C5DF92E71E67B094002A3DEE /* PetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
+		C5DF92E91E67B270002A3DEE /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		C5DF92EE1E67B535002A3DEE /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		C5DF92F31E67B9FA002A3DEE /* PetEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetEnums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +107,11 @@
 		C572E5B61E6623DC00252691 /* AdaptiveSmartFeeder */ = {
 			isa = PBXGroup;
 			children = (
+				C5DF92F01E67B9A1002A3DEE /* Enums */,
+				C5DF92ED1E67B523002A3DEE /* Extensions */,
+				C5DF92EB1E67B4E4002A3DEE /* Model */,
+				C5DF92EC1E67B4EC002A3DEE /* Controllers */,
 				C572E5B71E6623DC00252691 /* AppDelegate.swift */,
-				C572E5B91E6623DC00252691 /* ViewController.swift */,
-				C572E5E51E663CF200252691 /* ActivationViewController.swift */,
-				C572E5E71E6654B800252691 /* BluetoothSerial.swift */,
 				C572E5BB1E6623DC00252691 /* Main.storyboard */,
 				C572E5BE1E6623DC00252691 /* Assets.xcassets */,
 				C572E5C01E6623DC00252691 /* LaunchScreen.storyboard */,
@@ -120,7 +127,7 @@
 				C572E5CE1E6623DC00252691 /* Info.plist */,
 			);
 			path = AdaptiveSmartFeederTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		C572E5D61E6623DC00252691 /* AdaptiveSmartFeederUITests */ = {
 			isa = PBXGroup;
@@ -129,6 +136,40 @@
 				C572E5D91E6623DC00252691 /* Info.plist */,
 			);
 			path = AdaptiveSmartFeederUITests;
+			sourceTree = "<group>";
+		};
+		C5DF92EB1E67B4E4002A3DEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5DF92E91E67B270002A3DEE /* Pet.swift */,
+				C572E5E71E6654B800252691 /* BluetoothSerial.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C5DF92EC1E67B4EC002A3DEE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C5DF92E71E67B094002A3DEE /* PetProfileViewController.swift */,
+				C572E5E51E663CF200252691 /* ActivationViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C5DF92ED1E67B523002A3DEE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C5DF92EE1E67B535002A3DEE /* DateExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		C5DF92F01E67B9A1002A3DEE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				C5DF92F31E67B9FA002A3DEE /* PetEnums.swift */,
+			);
+			name = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,10 +309,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C572E5BA1E6623DC00252691 /* ViewController.swift in Sources */,
+				C5DF92E81E67B094002A3DEE /* PetProfileViewController.swift in Sources */,
 				C572E5B81E6623DC00252691 /* AppDelegate.swift in Sources */,
+				C5DF92EA1E67B270002A3DEE /* Pet.swift in Sources */,
 				C572E5E81E6654B800252691 /* BluetoothSerial.swift in Sources */,
 				C572E5E61E663CF200252691 /* ActivationViewController.swift in Sources */,
+				C5DF92F41E67B9FA002A3DEE /* PetEnums.swift in Sources */,
+				C5DF92EF1E67B535002A3DEE /* DateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,9 +18,24 @@ class Pet {
     var size: SizeEnum
     var gender: GenderEnum
     
+    var age: (Int, Int) {
+        
+        let calendar = Calendar.current
+        
+        let currentYear = calendar.component(.year, from: Date())
+        let currentMonth = calendar.component(.month, from: Date())
+        let petYear = calendar.component(.year, from: self.birthDate)
+        let petMonth = calendar.component(.month, from: self.birthDate)
+        
+        let years = currentYear - petYear
+        let months = currentMonth - petMonth
+        
+        return (years, months)
+    }
+    
     private init() {
         self.name = "Dog Pastor"
-        self.birthDate = Date(fromString: "2016-06-06")
+        self.birthDate = Date(fromString: "2011-01-01")
         self.weight = 6
         self.size = .giant
         self.gender = .male

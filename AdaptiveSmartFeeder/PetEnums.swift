@@ -8,16 +8,16 @@
 
 import Foundation
 
-enum SizeEnum {
+enum SizeEnum: String {
     
-    case small
-    case medium
-    case big
-    case giant
+    case small  = "Small"
+    case medium = "Medium"
+    case big    = "Big"
+    case giant  = "Giant"
 }
 
-enum GenderEnum {
+enum GenderEnum: String {
     
-    case male
-    case female
+    case male   = "Male"
+    case female = "Female"
 }

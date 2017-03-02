@@ -32,7 +32,7 @@
         <!--Pet Profile-->
         <scene sceneID="vJR-ZP-aFC">
             <objects>
-                <viewController id="Wvl-wA-YkC" sceneMemberID="viewController">
+                <viewController id="Wvl-wA-YkC" customClass="PetProfileViewController" customModule="AdaptiveSmartFeeder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H1c-1a-vUr"/>
                         <viewControllerLayoutGuide type="bottom" id="2Ja-g4-dzO"/>
@@ -192,6 +192,15 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pet Profile" id="gUR-L5-tfv"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="xeI-1l-zZc" id="tjW-cd-Qwa"/>
+                        <outlet property="birthDateLabel" destination="893-yz-aUo" id="DzY-pO-MiB"/>
+                        <outlet property="genderLabel" destination="NFj-SP-p8P" id="SuT-2T-ggB"/>
+                        <outlet property="nameLabel" destination="Uhd-q2-VoY" id="val-S2-NzF"/>
+                        <outlet property="petImageView" destination="QXQ-n3-D1c" id="gi6-eX-d2p"/>
+                        <outlet property="sizeLabel" destination="D8t-yr-IJi" id="Xl5-nQ-STJ"/>
+                        <outlet property="weightLabel" destination="wRV-0v-wFC" id="Zwg-px-uIg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bnj-rW-dLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
