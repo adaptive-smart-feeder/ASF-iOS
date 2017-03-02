@@ -24,20 +24,24 @@ class Pet {
         
         let currentYear = calendar.component(.year, from: Date())
         let currentMonth = calendar.component(.month, from: Date())
+        let currentDay = calendar.component(.day, from: Date())
         let petYear = calendar.component(.year, from: self.birthDate)
         let petMonth = calendar.component(.month, from: self.birthDate)
+        let petDay = calendar.component(.day, from: self.birthDate)
         
-        let years = currentYear - petYear
-        let months = currentMonth - petMonth
+        let years = currentYear - petYear - (petMonth > currentMonth ? 1 : 0)
+        var months = currentMonth - petMonth
+        if months < 0 { months += 12 }
+        if petDay > currentDay { months -= 1 }
         
         return (years, months)
     }
     
     private init() {
         self.name = "Dog Pastor"
-        self.birthDate = Date(fromString: "2011-01-01")
-        self.weight = 6
-        self.size = .giant
+        self.birthDate = Date(fromString: "2016-12-24")
+        self.weight = 4
+        self.size = .small
         self.gender = .male
     }
     
