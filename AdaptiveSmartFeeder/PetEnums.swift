@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+enum SizeEnum {
+    
+    case small
+    case medium
+    case big
+    case giant
+}
+
+enum GenderEnum {
+    
+    case male
+    case female
+}
