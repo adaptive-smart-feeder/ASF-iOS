@@ -71,6 +71,13 @@ class ActivationViewController: UIViewController, UITextFieldDelegate/*, Bluetoo
         self.isAutomatic = sender.isOn
         
         BluetoothSerialHM10.instance.addCommand("auto \(isAutomatic == true ? 1 : 0)")
+        
+        if self.isAutomatic == true {
+            let pet = Pet.instance
+            BluetoothSerialHM10.instance.addCommand("pet age \(pet.age.0) \(pet.age.1)")
+            BluetoothSerialHM10.instance.addCommand("pet wei \(pet.weight)")
+            BluetoothSerialHM10.instance.addCommand("pet siz \(pet.size.hashValue + 1)")
+        }
     }
 
     
