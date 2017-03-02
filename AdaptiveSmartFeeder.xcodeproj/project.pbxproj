@@ -199,18 +199,18 @@
 				TargetAttributes = {
 					C572E5B31E6623DC00252691 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = XR5ZL635QC;
+						DevelopmentTeam = CWK5G6U242;
 						ProvisioningStyle = Automatic;
 					};
 					C572E5C71E6623DC00252691 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = XR5ZL635QC;
+						DevelopmentTeam = CWK5G6U242;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C572E5B31E6623DC00252691;
 					};
 					C572E5D21E6623DC00252691 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = XR5ZL635QC;
+						DevelopmentTeam = CWK5G6U242;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C572E5B31E6623DC00252691;
 					};
@@ -423,7 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XR5ZL635QC;
+				DEVELOPMENT_TEAM = CWK5G6U242;
 				INFOPLIST_FILE = AdaptiveSmartFeeder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asf.AdaptiveSmartFeeder;
@@ -436,7 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XR5ZL635QC;
+				DEVELOPMENT_TEAM = CWK5G6U242;
 				INFOPLIST_FILE = AdaptiveSmartFeeder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asf.AdaptiveSmartFeeder;
@@ -450,7 +450,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = XR5ZL635QC;
+				DEVELOPMENT_TEAM = CWK5G6U242;
 				INFOPLIST_FILE = AdaptiveSmartFeederTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asf.AdaptiveSmartFeederTests;
@@ -465,7 +465,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = XR5ZL635QC;
+				DEVELOPMENT_TEAM = CWK5G6U242;
 				INFOPLIST_FILE = AdaptiveSmartFeederTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asf.AdaptiveSmartFeederTests;
@@ -479,7 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = XR5ZL635QC;
+				DEVELOPMENT_TEAM = CWK5G6U242;
 				INFOPLIST_FILE = AdaptiveSmartFeederUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asf.AdaptiveSmartFeederUITests;
@@ -493,7 +493,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = XR5ZL635QC;
+				DEVELOPMENT_TEAM = CWK5G6U242;
 				INFOPLIST_FILE = AdaptiveSmartFeederUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asf.AdaptiveSmartFeederUITests;
