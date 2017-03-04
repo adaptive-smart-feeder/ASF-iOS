@@ -23,12 +23,17 @@ class Scheduling: NSObject {
     var time: Time
     var weight: Int
     var isActivated: Bool
+    var enabledDays: [Int]
     
-    init(withWeight weight: Int, hours: Int, minutes: Int, isActivated: Bool) {
+    init(withWeight weight: Int, hours: Int, minutes: Int, isActivated: Bool, enabledDays: [Int]?) {
         
         self.time = Time(hours: hours, minutes: minutes)
         self.weight = weight
         self.isActivated = isActivated
+        self.enabledDays = enabledDays == nil ? [] : enabledDays!
+        
+        super.init()
+        
     }
-    
+        
 }

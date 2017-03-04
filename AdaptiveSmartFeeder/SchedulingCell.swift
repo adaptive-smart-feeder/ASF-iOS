@@ -25,6 +25,10 @@ class SchedulingCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.otherOptionLabel.isHidden = true
+        
+        self.weekdaysLabels.forEach {
+            $0.isEnabled = false
+        }
     }
 
     func setup(withScheduling scheduling: Scheduling ) {
@@ -32,6 +36,26 @@ class SchedulingCell: UITableViewCell {
         self.timeLabel.text = scheduling.time.description
         self.weightLabel.text = "\(scheduling.weight) g"
         self.activatedSwitch.isOn = scheduling.isActivated
+        
+        let numberOfDays = scheduling.enabledDays.count
+        
+        if numberOfDays == 0 {
+            self.setWeekdays(visible: false)
+            self.otherOptionLabel.text = ""
+        }
+        else if numberOfDays == 7 {
+            self.setWeekdays(visible: false)
+            self.otherOptionLabel.text = "Every day"
+        }
+        else {
+            self.setWeekdays(visible: true)
+            scheduling.enabledDays.forEach { self.weekdaysLabels[$0].isEnabled = true }
+        }
     }
 
+    private func setWeekdays(visible: Bool) {
+        self.weekdaysLabels.forEach { $0.isHidden = !visible }
+        self.otherOptionLabel.isHidden = visible
+    }
+    
 }

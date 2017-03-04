@@ -44,7 +44,7 @@ class SchedulingsViewController: UIViewController, UITableViewDataSource, UITabl
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: SchedulingCell.identifier) as? SchedulingCell {
             
-            let scheduling = Scheduling(withWeight: 100, hours: 12, minutes: 34, isActivated: true)
+            let scheduling = Scheduling(withWeight: 100, hours: 12, minutes: 34, isActivated: true, enabledDays: [0, 3, 4])
             
             cell.setup(withScheduling: scheduling)
             
