@@ -483,6 +483,7 @@
                     <tabBarItem key="tabBarItem" title="Activation" id="UYY-Bw-0Mn"/>
                     <connections>
                         <outlet property="activationButton" destination="b0B-nz-Hc1" id="EwG-DS-R6N"/>
+                        <outlet property="activationMode" destination="Ahg-w2-LJt" id="HqX-aE-Jal"/>
                         <outlet property="activationSlider" destination="5Mz-Yt-mlC" id="WrG-Uy-rjv"/>
                         <outlet property="activationTextField" destination="SVq-Cu-sNe" id="fcb-Za-Vq9"/>
                         <outlet property="navigationBar" destination="URf-xR-3S4" id="suT-tU-Yjg"/>

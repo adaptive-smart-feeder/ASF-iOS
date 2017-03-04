@@ -15,6 +15,7 @@ class ActivationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var activationTextField: UITextField!
     @IBOutlet weak var activationSlider: UISlider!
     @IBOutlet weak var activationButton: UIButton!
+    @IBOutlet weak var activationMode: UISegmentedControl!
     
     let maxValue = 1000
     
@@ -63,8 +64,7 @@ class ActivationViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func activate(_ sender: Any) {
-        
-        BluetoothSerialHM10.instance.addCommand("ac \(self.currentValue)")
+        BluetoothSerialHM10.instance.addCommand("ac \(self.activationMode.selectedSegmentIndex) \(self.currentValue)")
     }
     
     
