@@ -9,16 +9,29 @@
 import UIKit
 
 class SchedulingCell: UITableViewCell {
-
+    
+    static let identifier: String = "scheduling_cell"
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet var weekdaysLabels: [UILabel]!
+    @IBOutlet weak var otherOptionLabel: UILabel!
+    @IBOutlet weak var activatedSwitch: UISwitch!
+    
+    override var reuseIdentifier: String? {
+        return SchedulingCell.identifier
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.otherOptionLabel.isHidden = true
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setup(withScheduling scheduling: Scheduling ) {
+        
+        self.timeLabel.text = scheduling.time.description
+        self.weightLabel.text = "\(scheduling.weight) g"
+        self.activatedSwitch.isOn = scheduling.isActivated
     }
 
 }
