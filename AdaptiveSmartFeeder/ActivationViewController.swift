@@ -9,10 +9,12 @@
 import UIKit
 import CoreBluetooth
 
-class ActivationViewController: ViewController, UITextFieldDelegate/*, BluetoothSerialDelegate*/ {
+class ActivationViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var activationTextField: UITextField!
     @IBOutlet weak var activationSlider: UISlider!
+    @IBOutlet weak var activationButton: UIButton!
     
     let maxValue = 1000
     
@@ -36,7 +38,8 @@ class ActivationViewController: ViewController, UITextFieldDelegate/*, Bluetooth
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //serial = BluetoothSerial(delegate: self)
+        self.setupNavigationBar()
+        self.activationButton.layer.cornerRadius = 4.0
         self.activationTextField.delegate = self
         
         self.currentValue = 500
@@ -45,30 +48,40 @@ class ActivationViewController: ViewController, UITextFieldDelegate/*, Bluetooth
         self.view.addGestureRecognizer(tapGestureRecognizer)
         
         print("Start scanning...")
-        //serial.startScan()
     }
     
     func handleTap() {
         _ = self.textFieldShouldReturn(self.activationTextField)
     }
     
+    func setupNavigationBar() {
+        self.navigationBar.tintColor = .white
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+    }
     
     //MARK: Button actions
     
     
     @IBAction func activate(_ sender: Any) {
         
-        BluetoothSerialHM10.instance.pendingCommand = "ac \(self.currentValue)"
-        BluetoothSerialHM10.instance.sendCommand()
-        //self.pendingCommand = "ac \(self.currentValue)"
-        //self.sendCommand()
+        BluetoothSerialHM10.instance.addCommand("ac \(self.currentValue)")
     }
+    
     
     //MARK: Switch actions
     
     
     @IBAction func activatedValueChanged(_ sender: UISwitch) {
         self.isAutomatic = sender.isOn
+        
+        BluetoothSerialHM10.instance.addCommand("auto \(isAutomatic == true ? 1 : 0)")
+        
+        if self.isAutomatic == true {
+            let pet = Pet.instance
+            BluetoothSerialHM10.instance.addCommand("pet age \(pet.age.0) \(pet.age.1)")
+            BluetoothSerialHM10.instance.addCommand("pet wei \(pet.weight)")
+            BluetoothSerialHM10.instance.addCommand("pet siz \(pet.size.hashValue + 1)")
+        }
     }
 
     
@@ -111,49 +124,5 @@ class ActivationViewController: ViewController, UITextFieldDelegate/*, Bluetooth
         textField.resignFirstResponder()
         return true
     }
-    
-    
-    //MARK: BluetoothSerial Delegate
-    /*
-    func sendCommand() {
-        
-        guard let pendingCommand = self.pendingCommand else { return }
-        
-        if serial.connectedPeripheral != nil {
-            let data = pendingCommand.data(using: .utf8)!
-            serial.sendDataToDevice(data)
-        }
-        else if let pendingPeripheral = serial.pendingPeripheral {
-            serial.connectToPeripheral(pendingPeripheral)
-        }
-        else {
-            serial.startScan()
-        }
-    }
-    
-    func serialDidDiscoverPeripheral(_ peripheral: CBPeripheral, RSSI: NSNumber?) {
-        
-        if peripheral.name == "HMSoft" {
-            print("Discovered HMSoft, trying to connect...")
-            serial.stopScan()
-            serial.connectToPeripheral(peripheral)
-        }
-    }
-    
-    func serialDidConnect(_ peripheral: CBPeripheral) {
-        
-        print("Connected to HMSoft")
-        
-        self.sendCommand()
-    }
-    
-    func serialDidChangeState() {
-        
-    }
-    
-    func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
-        
-    }
-    */
 
 }
