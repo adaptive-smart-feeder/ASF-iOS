@@ -183,10 +183,10 @@
             </objects>
             <point key="canvasLocation" x="720" y="786.97183098591552"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Scheduling View Controller-->
         <scene sceneID="c75-sb-y3Q">
             <objects>
-                <viewController id="K2w-hw-OAA" sceneMemberID="viewController">
+                <viewController id="K2w-hw-OAA" customClass="AddSchedulingViewController" customModule="AdaptiveSmartFeeder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pHm-3Z-G6S"/>
                         <viewControllerLayoutGuide type="bottom" id="jP5-Nf-A2e"/>
@@ -262,17 +262,13 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpS-FJ-9yz">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.68369069520000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="S">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="S"/>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wj-D6-lO0">
                                         <rect key="frame" x="43" y="0.0" width="30" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="M">
-                                            <color key="titleColor" red="1" green="0.68369069520000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="M"/>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-Jz-Mx4">
                                         <rect key="frame" x="86" y="0.0" width="30" height="30"/>
@@ -338,6 +334,19 @@
                             <constraint firstItem="puG-JH-Z5i" firstAttribute="top" secondItem="KD2-qa-pMe" secondAttribute="bottom" constant="8" id="znr-t2-3A9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="j0H-hE-knX" id="PDA-p4-rgA"/>
+                        <outlet property="quantitySlider" destination="9Pf-x1-jRp" id="2Jc-1a-CXs"/>
+                        <outlet property="quantityTextField" destination="MMn-eV-tzH" id="79i-Vp-JvO"/>
+                        <outlet property="timeDatePicker" destination="puG-JH-Z5i" id="pkm-iq-pjM"/>
+                        <outletCollection property="daysButtons" destination="vpS-FJ-9yz" collectionClass="NSMutableArray" id="cd9-cg-C9j"/>
+                        <outletCollection property="daysButtons" destination="8Wj-D6-lO0" collectionClass="NSMutableArray" id="Hhi-Mu-ODJ"/>
+                        <outletCollection property="daysButtons" destination="aqC-Jz-Mx4" collectionClass="NSMutableArray" id="xZP-oD-s4A"/>
+                        <outletCollection property="daysButtons" destination="cbK-4m-MjZ" collectionClass="NSMutableArray" id="ccX-cf-FQ9"/>
+                        <outletCollection property="daysButtons" destination="vRc-z4-s52" collectionClass="NSMutableArray" id="uXU-p7-ctj"/>
+                        <outletCollection property="daysButtons" destination="Wgk-Gg-CcH" collectionClass="NSMutableArray" id="snD-zd-DHR"/>
+                        <outletCollection property="daysButtons" destination="rPI-1G-Hkn" collectionClass="NSMutableArray" id="HzP-Td-5Si"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOH-YN-UTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
