@@ -18,15 +18,13 @@ class AddSchedulingViewController: UIViewController {
     
     let orange = UIColor(colorLiteralRed: 1, green: 174/255.0, blue: 0, alpha: 1)
     
-    var enabledDays = [Bool](repeating: false, count: 7)
+    var areEnabledDays = [Bool](repeating: false, count: 7)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupNavigationBar()
         self.setupButtons()
-        
-        
     }
 
     
@@ -49,6 +47,22 @@ class AddSchedulingViewController: UIViewController {
         }
     }
     
+    func getEnabledDays() -> [Int]? {
+        
+        if (self.areEnabledDays.filter { $0 == true }.count) == 0 {
+            return nil
+        }
+        
+        var enabledDays = [Int]()
+        
+        for i in (0..<7) {
+            if self.areEnabledDays[i] {
+                enabledDays.append(i)
+            }
+        }
+        return enabledDays
+    }
+    
     
     //MARK: Events
     
@@ -57,9 +71,9 @@ class AddSchedulingViewController: UIViewController {
     
         let tag = button.tag
         
-        self.enabledDays[tag] = !self.enabledDays[tag]
+        self.areEnabledDays[tag] = !self.areEnabledDays[tag]
         
-        if(self.enabledDays[tag]) {
+        if(self.areEnabledDays[tag]) {
             button.tintColor = .white
             button.backgroundColor = orange
         }
@@ -68,6 +82,34 @@ class AddSchedulingViewController: UIViewController {
             button.backgroundColor = .white
         }
     }
+    
+    @IBAction func cancel(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func save(_ sender: Any) {
+        
+        guard let quantity = self.quantityTextField.text else {
+            return
+        }
+        
+        let calendar = Calendar.current
+        
+        let hours = calendar.component(.hour, from: self.timeDatePicker.date)
+        let minutes = calendar.component(.minute, from: self.timeDatePicker.date)
+        
+        let enabledDays = self.getEnabledDays()
+        
+        let newScheduling = Scheduling(withWeight: Int(quantity)!, hours: hours, minutes: minutes, isActivated: true, enabledDays: enabledDays)
+        
+        //TODO: save newScheduling with a persistence method
+        print("New scheduling: \(newScheduling)")
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 }
 

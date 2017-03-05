@@ -16,8 +16,12 @@ class Scheduling: NSObject {
         var minutes: Int
         
         var description: String {
-            return "\(self.hours):\(self.minutes)"
+            return String.init(format: "%02d:%02d", self.hours, self.minutes)
         }
+    }
+    
+    override var description: String {
+        return "Time: \(self.time.description)\nWeight: \(self.weight)\nEnabled days: \(self.enabledDays)"
     }
     
     var time: Time
@@ -35,5 +39,5 @@ class Scheduling: NSObject {
         super.init()
         
     }
-        
+    
 }

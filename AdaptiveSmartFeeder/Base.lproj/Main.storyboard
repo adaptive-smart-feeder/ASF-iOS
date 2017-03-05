@@ -203,8 +203,16 @@
                                 <color key="barTintColor" red="1" green="0.68369069520000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Add scheduling" id="ecS-hO-sNa">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="Won-6i-QXS"/>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="pPk-vl-6L0"/>
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="Won-6i-QXS">
+                                            <connections>
+                                                <action selector="cancel:" destination="K2w-hw-OAA" id="NcG-xq-o6V"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="pPk-vl-6L0">
+                                            <connections>
+                                                <action selector="save:" destination="K2w-hw-OAA" id="oj8-Qd-elT"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
