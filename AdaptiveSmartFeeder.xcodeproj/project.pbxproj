@@ -19,6 +19,7 @@
 		C572E5D81E6623DC00252691 /* AdaptiveSmartFeederUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5D71E6623DC00252691 /* AdaptiveSmartFeederUITests.swift */; };
 		C572E5E61E663CF200252691 /* ActivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5E51E663CF200252691 /* ActivationViewController.swift */; };
 		C572E5E81E6654B800252691 /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5E71E6654B800252691 /* BluetoothSerial.swift */; };
+		C5CC28DB1E6C6D7900CBFF29 /* WeightTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CC28DA1E6C6D7900CBFF29 /* WeightTextField.swift */; };
 		C5DF92E81E67B094002A3DEE /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF92E71E67B094002A3DEE /* PetProfileViewController.swift */; };
 		C5DF92EA1E67B270002A3DEE /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF92E91E67B270002A3DEE /* Pet.swift */; };
 		C5DF92EF1E67B535002A3DEE /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF92EE1E67B535002A3DEE /* DateExtensions.swift */; };
@@ -62,6 +63,7 @@
 		C572E5D91E6623DC00252691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C572E5E51E663CF200252691 /* ActivationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewController.swift; sourceTree = "<group>"; };
 		C572E5E71E6654B800252691 /* BluetoothSerial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothSerial.swift; sourceTree = "<group>"; };
+		C5CC28DA1E6C6D7900CBFF29 /* WeightTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightTextField.swift; sourceTree = "<group>"; };
 		C5DF92E71E67B094002A3DEE /* PetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
 		C5DF92E91E67B270002A3DEE /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		C5DF92EE1E67B535002A3DEE /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				C54CDA001E6B535D00B22D1F /* SchedulingCell.swift */,
+				C5CC28DA1E6C6D7900CBFF29 /* WeightTextField.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				C54B2DE61E6BD4BE00FFB827 /* AddSchedulingViewController.swift in Sources */,
 				C572E5E81E6654B800252691 /* BluetoothSerial.swift in Sources */,
 				C572E5E61E663CF200252691 /* ActivationViewController.swift in Sources */,
+				C5CC28DB1E6C6D7900CBFF29 /* WeightTextField.swift in Sources */,
 				C54CD9FC1E6B4A2300B22D1F /* Scheduling.swift in Sources */,
 				C5DF92F41E67B9FA002A3DEE /* PetEnums.swift in Sources */,
 				C5DF92EF1E67B535002A3DEE /* DateExtensions.swift in Sources */,

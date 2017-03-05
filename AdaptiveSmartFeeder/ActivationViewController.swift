@@ -9,50 +9,22 @@
 import UIKit
 import CoreBluetooth
 
-class ActivationViewController: UIViewController, UITextFieldDelegate {
+class ActivationViewController: UIViewController, UITextFieldDelegate, WeightTextFieldDelegate {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var activationTextField: UITextField!
+    @IBOutlet weak var activationTextField: WeightTextField!
     @IBOutlet weak var activationSlider: UISlider!
     @IBOutlet weak var activationButton: UIButton!
     @IBOutlet weak var activationMode: UISegmentedControl!
     
-    let maxValue = 1000
-    
-    var isAutomatic: Bool! // get current status from Arduino
-    
-    private var _currentValue: Int!
-    
-    var currentValue: Int {
-        get {
-            return _currentValue
-        }
-        set {
-            _currentValue = newValue
-            self.activationTextField.text = "\(newValue) g"
-            self.activationSlider.value = Float(newValue) / Float(maxValue)
-        }
-    }
-    
-    //var pendingCommand: String?
-
+    var isAutomatic: Bool!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setupNavigationBar()
         self.activationButton.layer.cornerRadius = 4.0
-        self.activationTextField.delegate = self
-        
-        self.currentValue = 500
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
-        self.view.addGestureRecognizer(tapGestureRecognizer)
-        
-        print("Start scanning...")
-    }
-    
-    func handleTap() {
-        _ = self.textFieldShouldReturn(self.activationTextField)
+        self.activationTextField.weightDelegate = self
     }
     
     func setupNavigationBar() {
@@ -60,11 +32,20 @@ class ActivationViewController: UIViewController, UITextFieldDelegate {
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
     }
     
+    
+    //MARK: WeightTextFieldDelegate
+    
+    
+    func didSetValue(to value: Int) {
+        self.activationSlider.value = Float(value) / Float(self.activationTextField.maxValue)
+    }
+    
+    
     //MARK: Button actions
     
     
     @IBAction func activate(_ sender: Any) {
-        BluetoothSerialHM10.instance.addCommand("ac \(self.activationMode.selectedSegmentIndex) \(self.currentValue)")
+        BluetoothSerialHM10.instance.addCommand("ac \(self.activationMode.selectedSegmentIndex) \(self.activationTextField.value)")
     }
     
     
@@ -94,35 +75,8 @@ class ActivationViewController: UIViewController, UITextFieldDelegate {
             self.activationTextField.resignFirstResponder()
         }
         
-        self.currentValue = Int(sender.value * Float(maxValue))
+        self.activationTextField.value = Int(sender.value * Float(self.activationTextField.maxValue))
     }
     
     
-    //MARK: TextField Delegate
-    
-    
-    // Remove " g" at the end and leading 0s
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        guard let text = textField.text else { return }
-        
-        self.currentValue = Int(text.components(separatedBy: " ").first ?? "0") ?? 0
-        
-        textField.text = (self.currentValue == 0 ? "" : "\(self.currentValue)")
-    }
-    
-    // Add " g" at the end and limit to max value
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        
-        guard let text = textField.text else { return }
-        
-        self.currentValue = Int(text) ?? 0
-        if self.currentValue > maxValue { self.currentValue = maxValue }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
 }

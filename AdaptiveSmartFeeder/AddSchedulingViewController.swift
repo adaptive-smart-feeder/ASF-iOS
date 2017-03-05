@@ -8,12 +8,12 @@
 
 import UIKit
 
-class AddSchedulingViewController: UIViewController {
+class AddSchedulingViewController: UIViewController, WeightTextFieldDelegate {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var timeDatePicker: UIDatePicker!
     @IBOutlet var daysButtons: [UIButton]!
-    @IBOutlet weak var quantityTextField: UITextField!
+    @IBOutlet weak var quantityTextField: WeightTextField!
     @IBOutlet weak var quantitySlider: UISlider!
     
     let orange = UIColor(colorLiteralRed: 1, green: 174/255.0, blue: 0, alpha: 1)
@@ -25,6 +25,7 @@ class AddSchedulingViewController: UIViewController {
         
         self.setupNavigationBar()
         self.setupButtons()
+        self.setupWeightTextFiel()
     }
 
     
@@ -47,6 +48,13 @@ class AddSchedulingViewController: UIViewController {
         }
     }
     
+    func setupWeightTextFiel() {
+        
+        self.quantityTextField.weightDelegate = self
+        self.quantityTextField.maxValue = 1000
+        self.quantityTextField.value = 500
+    }
+    
     func getEnabledDays() -> [Int]? {
         
         if (self.areEnabledDays.filter { $0 == true }.count) == 0 {
@@ -61,6 +69,14 @@ class AddSchedulingViewController: UIViewController {
             }
         }
         return enabledDays
+    }
+    
+    
+    //MARK: WeightTextFieldDelegate
+    
+    
+    func didSetValue(to value: Int) {
+        self.quantitySlider.value = Float(value) / Float(self.quantityTextField.maxValue)
     }
     
     
@@ -83,6 +99,15 @@ class AddSchedulingViewController: UIViewController {
         }
     }
     
+    @IBAction func didChangeValue(_ sender: UISlider) {
+        
+        if self.quantityTextField.isFirstResponder {
+            self.quantityTextField.resignFirstResponder()
+        }
+        
+        self.quantityTextField.value = Int(sender.value * Float(self.quantityTextField.maxValue))
+    }
+    
     @IBAction func cancel(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
@@ -92,6 +117,7 @@ class AddSchedulingViewController: UIViewController {
     @IBAction func save(_ sender: Any) {
         
         guard let quantity = self.quantityTextField.text else {
+            //TODO: show error message
             return
         }
         
@@ -109,7 +135,6 @@ class AddSchedulingViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
-    
     
 }
 
