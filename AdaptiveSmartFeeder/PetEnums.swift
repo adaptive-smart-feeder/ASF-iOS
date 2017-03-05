@@ -14,6 +14,13 @@ enum SizeEnum: String {
     case medium = "Medium"
     case big    = "Big"
     case giant  = "Giant"
+    
+    private static let values = [SizeEnum.small, SizeEnum.medium, SizeEnum.big, SizeEnum.giant]
+    
+    static func sizeFromIndex(_ index: Int) -> SizeEnum? {
+        return index < 0 && index >= SizeEnum.values.count ? nil : SizeEnum.values[index]
+    }
+    
 }
 
 enum GenderEnum: String {
