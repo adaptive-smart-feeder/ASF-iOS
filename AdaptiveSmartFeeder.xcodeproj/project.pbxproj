@@ -11,6 +11,7 @@
 		C54CD9FA1E6B385E00B22D1F /* SchedulingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54CD9F91E6B385E00B22D1F /* SchedulingsViewController.swift */; };
 		C54CD9FC1E6B4A2300B22D1F /* Scheduling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54CD9FB1E6B4A2300B22D1F /* Scheduling.swift */; };
 		C54CDA011E6B535D00B22D1F /* SchedulingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54CDA001E6B535D00B22D1F /* SchedulingCell.swift */; };
+		C57213011E6CC4DC00F8A6B0 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57213001E6CC4DC00F8A6B0 /* PlistManager.swift */; };
 		C572E5B81E6623DC00252691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C572E5B71E6623DC00252691 /* AppDelegate.swift */; };
 		C572E5BD1E6623DC00252691 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C572E5BB1E6623DC00252691 /* Main.storyboard */; };
 		C572E5BF1E6623DC00252691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C572E5BE1E6623DC00252691 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		C54CD9F91E6B385E00B22D1F /* SchedulingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulingsViewController.swift; sourceTree = "<group>"; };
 		C54CD9FB1E6B4A2300B22D1F /* Scheduling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduling.swift; sourceTree = "<group>"; };
 		C54CDA001E6B535D00B22D1F /* SchedulingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulingCell.swift; sourceTree = "<group>"; };
+		C57213001E6CC4DC00F8A6B0 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
 		C572E5B41E6623DC00252691 /* AdaptiveSmartFeeder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdaptiveSmartFeeder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C572E5B71E6623DC00252691 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C572E5BC1E6623DC00252691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				C54CD9FB1E6B4A2300B22D1F /* Scheduling.swift */,
 				C572E5E71E6654B800252691 /* BluetoothSerial.swift */,
 				C5DF92F51E67C495002A3DEE /* BluetoothSerialHM10.swift */,
+				C57213001E6CC4DC00F8A6B0 /* PlistManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				C5DF92EA1E67B270002A3DEE /* Pet.swift in Sources */,
 				C54B2DE61E6BD4BE00FFB827 /* AddSchedulingViewController.swift in Sources */,
 				C572E5E81E6654B800252691 /* BluetoothSerial.swift in Sources */,
+				C57213011E6CC4DC00F8A6B0 /* PlistManager.swift in Sources */,
 				C572E5E61E663CF200252691 /* ActivationViewController.swift in Sources */,
 				C5CC28DB1E6C6D7900CBFF29 /* WeightTextField.swift in Sources */,
 				C54CD9FC1E6B4A2300B22D1F /* Scheduling.swift in Sources */,
