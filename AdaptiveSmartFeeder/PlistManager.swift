@@ -120,7 +120,6 @@ struct Plist {
     }
     
     func save() {
-        //print(self.data)
         self.data?.write(toFile: self.destPath!)
     }
     
