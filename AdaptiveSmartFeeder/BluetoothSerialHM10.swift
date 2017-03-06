@@ -67,7 +67,7 @@ class BluetoothSerialHM10: BluetoothSerialDelegate {
     }
     
     func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
-        print("Disconnected drom HMSoft")
+        print("Disconnected from HMSoft")
     }
     
 }
