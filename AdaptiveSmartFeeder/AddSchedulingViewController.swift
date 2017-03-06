@@ -116,10 +116,7 @@ class AddSchedulingViewController: UIViewController, WeightTextFieldDelegate {
     
     @IBAction func save(_ sender: Any) {
         
-        guard let quantity = self.quantityTextField.text else {
-            //TODO: show error message
-            return
-        }
+        //TODO: Check errors
         
         let calendar = Calendar.current
         
@@ -128,10 +125,11 @@ class AddSchedulingViewController: UIViewController, WeightTextFieldDelegate {
         
         let enabledDays = self.getEnabledDays()
         
-        let newScheduling = Scheduling(withWeight: Int(quantity)!, hours: hours, minutes: minutes, isActivated: true, enabledDays: enabledDays)
+        let newScheduling = Scheduling(withWeight: self.quantityTextField.value, hours: hours, minutes: minutes, isActivated: true, enabledDays: enabledDays)
         
         //TODO: save newScheduling with a persistence method
-        print("New scheduling: \(newScheduling)")
+        
+        Scheduling.saveScheduling(newScheduling)
         
         self.dismiss(animated: true, completion: nil)
     }

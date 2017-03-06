@@ -18,6 +18,18 @@ class SchedulingCell: UITableViewCell {
     @IBOutlet weak var otherOptionLabel: UILabel!
     @IBOutlet weak var activatedSwitch: UISwitch!
     
+    private var _scheduling: Scheduling!
+    
+    var scheduling: Scheduling {
+        get {
+            return _scheduling
+        }
+        set {
+            _scheduling = newValue
+            self.setup(withScheduling: _scheduling)
+        }
+    }
+    
     override var reuseIdentifier: String? {
         return SchedulingCell.identifier
     }
@@ -31,7 +43,7 @@ class SchedulingCell: UITableViewCell {
         }
     }
 
-    func setup(withScheduling scheduling: Scheduling ) {
+    private func setup(withScheduling scheduling: Scheduling ) {
         
         self.timeLabel.text = scheduling.time.description
         self.weightLabel.text = "\(scheduling.weight) g"
@@ -41,7 +53,7 @@ class SchedulingCell: UITableViewCell {
         
         if numberOfDays == 0 {
             self.setWeekdays(visible: false)
-            self.otherOptionLabel.text = ""
+            self.otherOptionLabel.text = "Once"
         }
         else if numberOfDays == 7 {
             self.setWeekdays(visible: false)

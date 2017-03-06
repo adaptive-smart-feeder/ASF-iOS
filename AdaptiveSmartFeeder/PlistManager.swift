@@ -125,6 +125,7 @@ struct Plist {
     
     mutating func load(_ data: PlistFormat) {
         self.data = data
+        self.save()
     }
     
     func toArray() -> NSMutableArray? {

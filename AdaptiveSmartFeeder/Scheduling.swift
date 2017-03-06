@@ -96,17 +96,17 @@ class Scheduling: NSObject {
         }
         
         var schedulingsPlist = Plist(withName: "schedulings")!
-        let dictArray = schedulingsPlist.toArray()!
+        let array = schedulingsPlist.toArray()!
         
         if(position == -1) {
-            dictArray.add(schedulingDict)
+            array.add(schedulingDict)
         }
         else {
-            dictArray[position] = schedulingDict
+            array[position] = schedulingDict
         }
         
         //TODO: Send scheduling update/add to Arduino
-        schedulingsPlist.load(dictArray)
+        schedulingsPlist.load(array)
     }
 }
 

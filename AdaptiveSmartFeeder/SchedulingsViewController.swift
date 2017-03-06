@@ -13,6 +13,7 @@ class SchedulingsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     
+    var schedulings = [Scheduling]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,13 @@ class SchedulingsViewController: UIViewController, UITableViewDataSource, UITabl
         self.tableView.dataSource = self
         
         self.setupNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        schedulings = Scheduling.getSchedulings()
+        self.tableView.reloadData()
     }
 
     func setupNavigationBar() {
@@ -37,21 +45,20 @@ class SchedulingsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return schedulings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: SchedulingCell.identifier) as? SchedulingCell {
-            
-            let scheduling = Scheduling(withWeight: 100, hours: 12, minutes: 34, isActivated: true, enabledDays: [0, 3, 4])
-            
-            cell.setup(withScheduling: scheduling)
-            
-            return cell
+        var schedulingCell = SchedulingCell()
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: SchedulingCell.identifier) {
+            schedulingCell = cell as! SchedulingCell
         }
         
-        return SchedulingCell()
+        schedulingCell.scheduling = schedulings[indexPath.row]
+
+        return schedulingCell
     }
     
     //MARK: UITableViewDelegate
