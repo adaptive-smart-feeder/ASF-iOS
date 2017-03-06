@@ -123,6 +123,10 @@ struct Plist {
         self.data?.write(toFile: self.destPath!)
     }
     
+    mutating func load(_ data: PlistFormat) {
+        self.data = data
+    }
+    
     func toArray() -> NSMutableArray? {
         return self.data as? NSMutableArray
     }
