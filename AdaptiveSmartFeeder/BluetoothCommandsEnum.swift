@@ -10,21 +10,36 @@ import Foundation
 
 enum BluetoothCommand {
     
-    // Send immediate activation command
-    // Mode 0: Send exactly 'quantity' grams
-    // Mode 1: Send more 'quantity' grams
+//  Send immediate activation command
+//    
+//  * mode: 0 -> Send exactly 'quantity' grams
+//          1 -> Send more 'quantity' grams
+//  * quantity: number of grams to be sent
     case activate(mode: Int, quantity: Int)
     
-    // Set feeder's automatic mode on/off
+//  Set feeder's automatic mode on/off
     case setAutomatic(automatic: Bool)
     
-    // Add or update a scheduling
+//  Add or update a scheduling
+//
+//  * id: integer that identifies schedulings
+//        use to know what scheduling to be updated or if it should be added a new one
+//  * hours: hours of time to activate
+//  * minutes: minutes of time to activate
+//  * weight: quantity of grams to be provided
+//  * isActivated: tells if the scheduling is set on/off
+//  * enabledDays: -1   -> to be activated only once
+//                 else -> array of integers mapping sunday-saturday to 0-6
     case schedule(id: Int, hours: Int, minutes: Int, weight: Int, isActivated: Bool, enabledDays: [Int]?)
     
-    // Update pet attributes to modify automatic mode params
+//  Update pet attributes to modify automatic mode params
+//
+//  * Age: tuple with years and months of pet
+//  * Weight: int with corresponding weight of pet
+//  * Size: 0 - small, 1 - medium, 2 - big, 3 - giant
     case updatePetData(age: (Int, Int), weight: Int, size: SizeEnum)
     
-    // String sent to Arduino
+    // String sent to Arduino for each command
     var description: String {
         
         switch self {
