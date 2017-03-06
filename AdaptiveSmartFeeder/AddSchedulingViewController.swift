@@ -127,9 +127,14 @@ class AddSchedulingViewController: UIViewController, WeightTextFieldDelegate {
         
         let newScheduling = Scheduling(withWeight: self.quantityTextField.value, hours: hours, minutes: minutes, isActivated: true, enabledDays: enabledDays)
         
-        //TODO: save newScheduling with a persistence method
-        
         Scheduling.saveScheduling(newScheduling)
+        
+        BluetoothSerialHM10.instance.addCommand(.schedule(id: newScheduling.id,
+                                                          hours: newScheduling.time.hours,
+                                                          minutes: newScheduling.time.minutes,
+                                                          weight: newScheduling.weight,
+                                                          isActivated: newScheduling.isActivated,
+                                                          enabledDays: newScheduling.enabledDays))
         
         self.dismiss(animated: true, completion: nil)
     }

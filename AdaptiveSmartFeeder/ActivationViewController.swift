@@ -45,7 +45,11 @@ class ActivationViewController: UIViewController, UITextFieldDelegate, WeightTex
     
     
     @IBAction func activate(_ sender: Any) {
-        BluetoothSerialHM10.instance.addCommand("ac \(self.activationMode.selectedSegmentIndex) \(self.activationTextField.value)")
+        
+        let mode = self.activationMode.selectedSegmentIndex
+        let quantity = self.activationTextField.value
+        
+        BluetoothSerialHM10.instance.addCommand(.activate(mode: mode, quantity: quantity))
     }
     
     
@@ -55,13 +59,12 @@ class ActivationViewController: UIViewController, UITextFieldDelegate, WeightTex
     @IBAction func activatedValueChanged(_ sender: UISwitch) {
         self.isAutomatic = sender.isOn
         
-        BluetoothSerialHM10.instance.addCommand("auto \(isAutomatic == true ? 1 : 0)")
+        BluetoothSerialHM10.instance.addCommand(.setAutomatic(automatic: isAutomatic))
         
         if self.isAutomatic == true {
             let pet = Pet.instance
-            BluetoothSerialHM10.instance.addCommand("pet age \(pet.age.0) \(pet.age.1)")
-            BluetoothSerialHM10.instance.addCommand("pet wei \(pet.weight)")
-            BluetoothSerialHM10.instance.addCommand("pet siz \(pet.size.hashValue + 1)")
+            
+            BluetoothSerialHM10.instance.addCommand(.updatePetData(age: pet.age, weight: pet.weight, size: pet.size))
         }
     }
 

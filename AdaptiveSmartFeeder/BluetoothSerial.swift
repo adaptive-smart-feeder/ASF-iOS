@@ -108,7 +108,10 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
     
     /// Start scanning for peripherals
     func startScan() {
-        guard centralManager.state == .poweredOn else { return }
+        guard centralManager.state == .poweredOn else {
+            print("Central manager not powered on")
+            return
+        }
         
         // start scanning for peripherals with correct service UUID
         let uuid = CBUUID(string: "FFE0")

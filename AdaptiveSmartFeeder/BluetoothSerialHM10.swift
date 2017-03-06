@@ -19,8 +19,8 @@ class BluetoothSerialHM10: BluetoothSerialDelegate {
         serial = BluetoothSerial(delegate: self)
     }
     
-    func addCommand(_ command: String) {
-        self.pendingCommands.append(command)
+    func addCommand(_ command: BluetoothCommand) {
+        self.pendingCommands.append(command.description)
         self.sendCommand()
     }
     
@@ -32,6 +32,7 @@ class BluetoothSerialHM10: BluetoothSerialDelegate {
         if serial.connectedPeripheral != nil {
             let data = pendingCommand.data(using: .utf8)!
             serial.sendDataToDevice(data)
+            print("Sent: \(pendingCommand)")
             self.pendingCommands.removeFirst()
             if !self.pendingCommands.isEmpty { self.sendCommand() }
         }
