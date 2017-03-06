@@ -151,7 +151,6 @@
                                 <color key="barTintColor" red="1" green="0.68369069520000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Schedulings" id="M12-5a-Bel">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="refresh" id="PK9-Ws-lkP"/>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Y12-oA-ahA">
                                             <connections>
                                                 <segue destination="K2w-hw-OAA" kind="presentation" id="sT8-2f-mE4"/>
@@ -173,7 +172,7 @@
                             <constraint firstItem="d7V-xh-aCV" firstAttribute="top" secondItem="RrT-PB-0wL" secondAttribute="bottom" id="vVH-7L-hGx"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Schedulings" id="1IH-j1-llJ"/>
+                    <tabBarItem key="tabBarItem" title="Schedulings" image="scheduling_icon" id="1IH-j1-llJ"/>
                     <connections>
                         <outlet property="navigationBar" destination="RrT-PB-0wL" id="Tmu-qY-MUR"/>
                         <outlet property="tableView" destination="d7V-xh-aCV" id="v80-4V-h1p"/>
@@ -524,7 +523,7 @@
                             <constraint firstItem="QXQ-n3-D1c" firstAttribute="top" secondItem="Zq3-G1-jPc" secondAttribute="bottom" id="whM-Ws-FhO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pet Profile" id="gUR-L5-tfv"/>
+                    <tabBarItem key="tabBarItem" title="Pet Profile" image="pet_profile_icon" id="gUR-L5-tfv"/>
                     <connections>
                         <outlet property="ageLabel" destination="xeI-1l-zZc" id="tjW-cd-Qwa"/>
                         <outlet property="birthDateLabel" destination="893-yz-aUo" id="DzY-pO-MiB"/>
@@ -676,7 +675,7 @@
                             <constraint firstAttribute="trailing" secondItem="ms0-S7-QPN" secondAttribute="trailing" constant="16" id="ygR-rW-ykC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Activation" id="UYY-Bw-0Mn"/>
+                    <tabBarItem key="tabBarItem" title="Activation" image="activation_icon" id="UYY-Bw-0Mn"/>
                     <connections>
                         <outlet property="activationButton" destination="b0B-nz-Hc1" id="EwG-DS-R6N"/>
                         <outlet property="activationMode" destination="Ahg-w2-LJt" id="HqX-aE-Jal"/>
@@ -692,7 +691,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="2H7-dZ-rFE">
             <objects>
-                <tabBarController id="lTl-Xn-9bi" sceneMemberID="viewController">
+                <tabBarController id="lTl-Xn-9bi" customClass="TabBarController" customModule="AdaptiveSmartFeeder" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5ni-76-ynr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -711,6 +710,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="activation_icon" width="30" height="30"/>
         <image name="pet1" width="712" height="495"/>
+        <image name="pet_profile_icon" width="30" height="30"/>
+        <image name="scheduling_icon" width="30" height="30"/>
     </resources>
 </document>
