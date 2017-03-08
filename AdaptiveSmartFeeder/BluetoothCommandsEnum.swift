@@ -52,7 +52,7 @@ enum BluetoothCommand {
             
             
         case let .setAutomatic(automatic):
-            return "auto \(automatic ? 1 : 0)"
+            return "au \(automatic ? 1 : 0)"
             
             
         case let .schedule(id, hours, minutes, weight, isActivated, enabledDays):
@@ -63,7 +63,7 @@ enum BluetoothCommand {
             else {
                 enabledDays!.forEach { days += " \($0)" }
             }
-            return "sch \(id) \(hours) \(minutes) \(weight) \(isActivated)\(days)"
+            return "sc \(id) \(hours) \(minutes) \(weight) \(isActivated)\(days)"
         
         
         case let .updatePetData(age, weight, size):
@@ -77,7 +77,7 @@ enum BluetoothCommand {
             let hours = calendar.component(.hour, from: date)
             let minutes = calendar.component(.minute, from: date)
             
-            return "date \(hours) \(minutes)"
+            return "dt \(hours) \(minutes)"
         }
     }
     
