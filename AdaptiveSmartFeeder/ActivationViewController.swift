@@ -50,6 +50,7 @@ class ActivationViewController: UIViewController, UITextFieldDelegate, WeightTex
         let quantity = self.activationTextField.value
         
         BluetoothSerialHM10.instance.addCommand(.activate(mode: mode, quantity: quantity))
+        BluetoothSerialHM10.instance.addCommand(.sendDate)
     }
     
     
@@ -60,11 +61,13 @@ class ActivationViewController: UIViewController, UITextFieldDelegate, WeightTex
         self.isAutomatic = sender.isOn
         
         BluetoothSerialHM10.instance.addCommand(.setAutomatic(automatic: isAutomatic))
+        BluetoothSerialHM10.instance.addCommand(.sendDate)
         
         if self.isAutomatic == true {
             let pet = Pet.instance
             
             BluetoothSerialHM10.instance.addCommand(.updatePetData(age: pet.age, weight: pet.weight, size: pet.size))
+            BluetoothSerialHM10.instance.addCommand(.sendDate)
         }
     }
 

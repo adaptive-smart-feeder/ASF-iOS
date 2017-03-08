@@ -289,7 +289,7 @@
 				TargetAttributes = {
 					C572E5B31E6623DC00252691 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = CWK5G6U242;
+						DevelopmentTeam = XR5ZL635QC;
 						ProvisioningStyle = Automatic;
 					};
 					C572E5C71E6623DC00252691 = {
@@ -527,7 +527,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CWK5G6U242;
+				DEVELOPMENT_TEAM = XR5ZL635QC;
 				INFOPLIST_FILE = AdaptiveSmartFeeder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asf.AdaptiveSmartFeeder;
@@ -540,7 +540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CWK5G6U242;
+				DEVELOPMENT_TEAM = XR5ZL635QC;
 				INFOPLIST_FILE = AdaptiveSmartFeeder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asf.AdaptiveSmartFeeder;

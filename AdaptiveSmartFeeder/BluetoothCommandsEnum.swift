@@ -39,6 +39,9 @@ enum BluetoothCommand {
 //  * Size: 0 - small, 1 - medium, 2 - big, 3 - giant
     case updatePetData(age: (Int, Int), weight: Int, size: SizeEnum)
     
+//  Send current date from iOS to Arduino
+    case sendDate
+    
     // String sent to Arduino for each command
     var description: String {
         
@@ -66,6 +69,15 @@ enum BluetoothCommand {
         case let .updatePetData(age, weight, size):
             return "pet \(age.0) \(age.1) \(weight) \(size.hashValue)"
         
+        case .sendDate:
+            
+            let calendar = Calendar.current
+            let date = Date()
+            
+            let hours = calendar.component(.hour, from: date)
+            let minutes = calendar.component(.minute, from: date)
+            
+            return "date \(hours) \(minutes)"
         }
     }
     
