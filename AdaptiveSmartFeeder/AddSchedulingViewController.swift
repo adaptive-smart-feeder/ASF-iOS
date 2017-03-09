@@ -135,7 +135,6 @@ class AddSchedulingViewController: UIViewController, WeightTextFieldDelegate {
                                                           weight: newScheduling.weight,
                                                           isActivated: newScheduling.isActivated,
                                                           enabledDays: newScheduling.enabledDays))
-        BluetoothSerialHM10.instance.addCommand(.sendDate)
         self.dismiss(animated: true, completion: nil)
     }
     

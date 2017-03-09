@@ -62,8 +62,19 @@ enum BluetoothCommand {
             }
             else {
                 enabledDays!.forEach { days += " \($0)" }
+                days += " -1"
             }
-            return "sc \(id) \(hours) \(minutes) \(weight) \(isActivated)\(days)"
+            
+            let calendar = Calendar.current
+            let date = Date()
+            
+            let currentHours = calendar.component(.hour, from: date)
+            let currentMinutes = calendar.component(.minute, from: date)
+            var currentWeekDay = calendar.component(.weekday, from: date)
+            currentWeekDay -= 1
+            if currentWeekDay < 0 { currentWeekDay = 6 }
+            
+            return "sc \(id) \(hours) \(minutes) \(currentHours) \(currentMinutes) \(currentWeekDay) \(weight) \(isActivated ? 1 : 0)\(days) "
         
         
         case let .updatePetData(age, weight, size):

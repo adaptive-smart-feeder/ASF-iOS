@@ -20,6 +20,7 @@ class BluetoothSerialHM10: BluetoothSerialDelegate {
     }
     
     func addCommand(_ command: BluetoothCommand) {
+        
         self.pendingCommands.append(command.description)
         self.sendCommand()
     }
